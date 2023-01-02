@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #play_video{
+            width: 80%;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        #play_video>div{
+            margin: auto;
+            width: 700px;
+            height: 500px;       
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="play_video">
+        <iframe width="560" height="315"title="YouTube video player" frameborder="0"
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+          picture-in-picture" allowfullscreen>
+        </iframe>
+    </div>
+</body>
+</html>
+<script>
+
+    let id = JSON.parse(localStorage.getItem("video"))
+
+    let append = ()=>{
+      let cont = document.getElementById("play_video");
+        cont.innerHTML=null;
+    
+    let iframe = document.createElement("iframe");
+    iframe.src=`https://www.youtube.com/embed/${id}`;
+    
+    iframe.width="100%";
+    iframe.height="100%";
+    iframe.allow = "fullscreen";
+
+    let div = document.createElement("div");
+    div.append(iframe)
+    cont.append(div);
+    
+    }
+    
+    append()
+
+</script>

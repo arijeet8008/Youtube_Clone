@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almost Youtube</title>
+    <style>
+        #popular_videos{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 10px;
+            margin-top: 10px;
+            
+        }
+        #query{
+            width: 30%;
+            height: 30px;
+            border-radius: 5px;
+            font-size: large;
+            margin: 30px 0px 30px 400px;
+        }
+        button{
+            height: 35px;
+            width: 100px;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="query" placeholder="Search"/>
+    <button onclick="get_data()">Search</button>
+    <div id="popular_videos"></div>
+</body>
+</html>
+<script src="./index.js"></script>
